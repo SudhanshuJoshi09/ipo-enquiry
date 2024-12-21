@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IPO Companies</title>
+    <script src="https://unpkg.com/htmx.org"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/json-enc.js"></script>
+  </head>
+  <body>
+    <form
+        hx-target="#response" 
+        hx-post="/ipo/query"
+        hx-ext="json-enc"
+        >
+        <label for="company-select">Select a Company:</label>
+        <select name="ipo_id" id="company-select" hx-post="/" hx-trigger="load" hx-target="#company-select" hx-swap="innerHTML">
+          <option value="">Loading companies...</option>
+        </select>
+        <label for="pan-number">Enter PAN Number:</label>
+        <input name="pan" type="text" id="pan-number" placeholder="Enter PAN number">
+        <button type="submit">Send</button>
+    </form>
+    <div id="response"></div>
+  </body>
+</html>
+
