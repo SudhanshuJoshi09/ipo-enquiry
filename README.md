@@ -1,6 +1,4 @@
-# README: PAN and IPO Search Service
-
----
+# Simple IPO Enquiry Service
 
 ## Introduction
 Simple IPO enquiry service, this service provides a simple interface to check ipo allotments against a PAN
