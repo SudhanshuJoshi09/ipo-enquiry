@@ -23,3 +23,18 @@ services:
       ME_CONFIG_MONGODB_URL: mongodb://root:root@mongo:27017/
       ME_CONFIG_BASICAUTH: false
 
+  main-app:
+    build: .
+    restart: always
+    ports:
+      - 5001:5000
+    environment:
+      # MONGO_URI: mongodb://root:root@mongo:27017/admin
+      MONGO_HOST: mongo
+      MONGO_USERNAME: root
+      MONGO_PASSWORD: root
+      MONGO_PORT: 27017
+      MONGO_AUTH_DB: admin
+    depends_on:
+      - mongo
+
